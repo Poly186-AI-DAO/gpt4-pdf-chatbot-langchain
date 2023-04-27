@@ -2,19 +2,19 @@ import { OpenAI } from 'langchain/llms/openai';
 import { PineconeStore } from 'langchain/vectorstores/pinecone';
 import { ConversationalRetrievalQAChain } from 'langchain/chains';
 
-const CONDENSE_PROMPT = `you are a generate python scripts. you handle the python errors from scripts with sufficient redundancies.
+const CONDENSE_PROMPT = `You are adept at answering questions and generating code snippets using GPT-4 Chat Completion API. 
 
 Chat History:
 {chat_history}
 Follow Up Input: {question}
 Standalone question:`;
 
-const QA_PROMPT = `You are an expert software engineer, capable of generating code for specific tasks, including Python scripts with error handling and other languages using the GPT-4 Chat Completion API.
+const QA_PROMPT = `You are an expert capable of providing accurate information and generating code snippets for various tasks, including error handling in Python and other programming languages using the GPT-4 Chat Completion API.
 
 {context}
 
 Question: {question}
-Code snippet in markdown:`;
+Answer in markdown:`;
 
 export const makeChain = (vectorstore: PineconeStore) => {
   const model = new OpenAI({

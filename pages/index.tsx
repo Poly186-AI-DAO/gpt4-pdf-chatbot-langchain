@@ -25,7 +25,7 @@ export default function Home() {
   }>({
     messages: [
       {
-        message: 'Hi, what would you like to learn about this legal case?',
+        message: 'Together we cast spells that reshape the world',
         type: 'apiMessage',
       },
     ],
@@ -48,7 +48,7 @@ export default function Home() {
     setError(null);
 
     if (!query) {
-      alert('Please input a question');
+      alert('Please input your request, for your wish is my command');
       return;
     }
 
@@ -125,7 +125,7 @@ export default function Home() {
       <Layout>
         <div className="mx-auto flex flex-col gap-4">
           <h1 className="text-2xl font-bold leading-[1.1] tracking-tighter text-center">
-            Chat With Your Legal Docs
+            Chat With Princeps Polaris
           </h1>
           <main className={styles.main}>
             <div className={styles.cloud}>
@@ -218,13 +218,13 @@ export default function Home() {
                     ref={textAreaRef}
                     autoFocus={false}
                     rows={1}
-                    maxLength={512}
+                    maxLength={10000}
                     id="userInput"
                     name="userInput"
                     placeholder={
                       loading
                         ? 'Waiting for response...'
-                        : 'What is this legal case about?'
+                        : 'Tell me how I can help you manifest divinity into this plane of existence'
                     }
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
@@ -261,8 +261,8 @@ export default function Home() {
           </main>
         </div>
         <footer className="m-auto p-4">
-          <a href="https://twitter.com/mayowaoshin">
-            Powered by LangChainAI. Demo built by Mayo (Twitter: @mayowaoshin).
+          <a href="https://www.poly186.io/">
+            Powered by LangChainAI. Demo built by Mayo. In Princeps Prime use.
           </a>
         </footer>
       </Layout>

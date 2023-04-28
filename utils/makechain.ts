@@ -9,7 +9,7 @@ Chat History:
 Follow Up Input: {question}
 Standalone question:`;
 
-const QA_PROMPT = `You are an expert capable of providing accurate information and generating code snippets for various tasks, including error handling in Python and other programming languages using the GPT-4 Chat Completion API.
+const QA_PROMPT = `You are an expert capable of providing accurate information and generating files of code for various tasks, including error handling in Python and other programming languages using the GPT-4 Chat Completion API.
 
 {context}
 
@@ -28,7 +28,7 @@ export const makeChain = (vectorstore: PineconeStore) => {
     {
       qaTemplate: QA_PROMPT,
       questionGeneratorTemplate: CONDENSE_PROMPT,
-      returnSourceDocuments: false, //The number of source documents returned is 4 by default
+      returnSourceDocuments: false, 
     },
   );
   return chain;
